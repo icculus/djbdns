@@ -1,7 +1,11 @@
 #ifndef ERROR_H
 #define ERROR_H
 
+#if defined (linux) || defined (__linux)
+#include <errno.h>
+#else
 extern int errno;
+#endif
 
 extern int error_intr;
 extern int error_nomem;
