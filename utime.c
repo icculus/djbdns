@@ -7,7 +7,7 @@ char *fn;
 
 char *ustr;
 unsigned long u;
-time_t ut[2];
+struct utimbuf ut;
 
 int main(int argc,char **argv)
 {
@@ -18,7 +18,7 @@ int main(int argc,char **argv)
   if (!ustr) _exit(100);
   scan_ulong(ustr,&u);
 
-  ut[0] = ut[1] = u;
-  if (utime(fn,ut) == -1) _exit(111);
+  ut.actime = ut.modtime = u;
+  if (utime(fn,&ut) == -1) _exit(111);
   _exit(0);
 }
