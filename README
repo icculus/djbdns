@@ -1,3 +1,9 @@
+(this is just djbdns 1.05 with a bunch of other popular patches
+collected up and piled on top of it, so I don't have to keep
+tracking all this down, for my own use. You can totally
+ignore all this stuff. Don't send bug reports and patches for
+this repo to Dan Bernstein, please.  --ryan.)
+
 djbdns 1.05
 20010211
 Copyright 2001
