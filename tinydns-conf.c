@@ -46,7 +46,7 @@ int main(int argc,char **argv)
 
   start("run");
   outs("#!/bin/sh\nexec 2>&1\nexec envuidgid "); outs(user);
-  outs(" envdir ./env softlimit -d300000 ");
+  outs(" envdir ./env softlimit -d800000 ");
   outs(auto_home); outs("/bin/tinydns\n");
   finish();
   perm(0755);
