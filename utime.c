@@ -1,5 +1,6 @@
 #include <sys/types.h>
 #include <sys/time.h>
+#include <utime.h>
 #include "scan.h"
 #include "exit.h"
 
@@ -11,6 +12,7 @@ struct utimbuf ut;
 
 int main(int argc,char **argv)
 {
+  (void)argc;	// unused
   fn = argv[1];
   if (!fn) _exit(100);
 
