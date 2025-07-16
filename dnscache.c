@@ -431,7 +431,8 @@ int main()
   socket_tryreservein(udp53,131072);
 
   byte_zero(seed,sizeof seed);
-  read(0,seed,sizeof seed);
+  if (read(0,seed,sizeof seed) != sizeof seed)
+    strerr_die2sys(111,FATAL,"unable to read seed from stdin: ");
   dns_random_init(seed);
   close(0);
 

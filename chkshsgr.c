@@ -1,4 +1,6 @@
 #include "exit.h"
+#include <unistd.h>
+#include <grp.h>
 
 int main()
 {

@@ -432,13 +432,13 @@ int main()
 	if (!dns_domain_fromdot(&d2,f[2].s,f[2].len)) nomem();
 
 	if (!stralloc_0(&f[4])) nomem();
-	if (!scan_ulong(f[4].s,&u)) u = 0;
+	if (!scan_u32(f[4].s,&u)) u = 0;
 	uint16_pack_big(srv,u);
 	if (!stralloc_0(&f[5])) nomem();
-	if (!scan_ulong(f[5].s,&u)) u = 0;
+	if (!scan_u32(f[5].s,&u)) u = 0;
 	uint16_pack_big(srv + 2,u);
 	if (!stralloc_0(&f[3])) nomem();
-	if (!scan_ulong(f[3].s,&u)) nomem();
+	if (!scan_u32(f[3].s,&u)) nomem();
 	uint16_pack_big(srv + 4,u);
 
 	rr_start(DNS_T_SRV,ttl,ttd,loc);
